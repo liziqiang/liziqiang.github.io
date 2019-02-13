@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="UKNOWN">
 <meta property="og:description" content="在console中触发事件 1__VUE_DEVTOOLS_GLOBAL_HOOK__.Vue.prototype.$bus.$emit(&apos;finance_show_application&apos;)  html中属性用:xxx-yyy=“mmmTcc”，如果用:xxxYyy会导致js压缩问题  v-model深度绑定字符串 添加全局方法 12345678910111213// 根据字符串设置或获取值c">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-13T08:26:36.204Z">
+<meta property="og:updated_time" content="2019-02-13T10:25:57.697Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue记录~">
 <meta name="twitter:description" content="在console中触发事件 1__VUE_DEVTOOLS_GLOBAL_HOOK__.Vue.prototype.$bus.$emit(&apos;finance_show_application&apos;)  html中属性用:xxx-yyy=“mmmTcc”，如果用:xxxYyy会导致js压缩问题  v-model深度绑定字符串 添加全局方法 12345678910111213// 根据字符串设置或获取值c">
@@ -380,7 +380,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-02-13 16:26:36 16:26:36" itemprop="dateModified" datetime="2019-02-13T16:26:36+08:00">2019-02-13 16:26:36</time>
+                <time title="Modified: 2019-02-13 18:25:57 18:25:57" itemprop="dateModified" datetime="2019-02-13T18:25:57+08:00">2019-02-13 18:25:57</time>
               
             
           </span>
@@ -436,8 +436,9 @@
 </li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> child = &#123;</span><br><span class="line">  created: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.$on(<span class="string">'click-child'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'send ajax here'</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">  template: <span class="string">'&lt;div&gt;&lt;/div&gt;'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> app = &#123;</span><br><span class="line">  template: <span class="string">'&lt;div&gt;&lt;button v-on:click="clickParent"&gt;点击&lt;/button&gt;&lt;child v-ref:child&gt;&lt;/child&gt;&lt;div&gt;'</span>,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    clickParent: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.$refs.child.$emit(<span class="string">'click-child'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  components: &#123;</span><br><span class="line">    child: child</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;<span class="attr">el</span>: <span class="string">'body'</span>, <span class="attr">components</span>: &#123;<span class="attr">app</span>: app&#125;&#125;);</span><br></pre></td></tr></table></figure>
-<p>vee-validate的inject，如果使用slot需要在slot的元素那里加上inject: [‘$validator’]</p>
 <ul>
+<li><p>vee-validate的inject，如果使用slot需要在slot的元素那里加上inject: [‘$validator’]</p>
+</li>
 <li><p>webpack打包优化</p>
 <ol>
 <li><p>commonsChunks优化</p>
