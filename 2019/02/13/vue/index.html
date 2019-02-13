@@ -208,17 +208,7 @@
         
         
           
-            
-            
-            
-              
-              
-
-  
-  
-    
-  
-  <li class="menu-item menu-item-third-party-services">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -230,26 +220,28 @@
       
     
 
-    <a href="/third-party-services/" rel="section"><i class="menu-item-icon fa fa-fw fa-plug"></i> <br>Third Party Services</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
 
   </li>
-
-
-            
-          
-            
-            
-            
-          
-            
-            
-            
-          
-            
-            
-            
-          
         
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">2</span></a>
+
+  </li>
 
       
       
@@ -565,7 +557,7 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives">
+                  <a href="/archives/">
                 
                     <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">posts</span>
@@ -766,7 +758,7 @@
     var isfetched = false;
     var isXml = true;
     // Search DB path;
-    var search_path = "";
+    var search_path = "search.xml";
     if (search_path.length === 0) {
       search_path = "search.xml";
     } else if (/json$/i.test(search_path)) {
@@ -971,7 +963,7 @@
 
                   // select top N slices in content
 
-                  var upperBound = parseInt('1');
+                  var upperBound = parseInt('');
                   if (upperBound >= 0) {
                     slicesOfContent = slicesOfContent.slice(0, upperBound);
                   }
@@ -1038,7 +1030,7 @@
             }
           }
 
-          if ('auto' === 'auto') {
+          if ('auto' === '') {
             input.addEventListener('input', inputEventFunction);
           } else {
             $('.search-icon').click(inputEventFunction);
