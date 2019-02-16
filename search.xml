@@ -4,6 +4,9 @@
     <title><![CDATA[html技巧]]></title>
     <url>%2F2019%2F02%2F15%2Fhtml%2F</url>
     <content type="text"><![CDATA[把html页面的title设置为空格1document.title=&apos;\u200E&apos;]]></content>
+      <tags>
+        <tag>Web</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Mac技巧]]></title>
