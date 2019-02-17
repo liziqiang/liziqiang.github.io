@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="UKNOWN">
 <meta property="og:description" content="清除右键多余打开选项 1/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo &amp;quo">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-13T13:26:50.206Z">
+<meta property="og:updated_time" content="2019-02-17T11:48:38.295Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac技巧">
 <meta name="twitter:description" content="清除右键多余打开选项 1/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo &amp;quo">
@@ -380,7 +380,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-02-13 21:26:50 21:26:50" itemprop="dateModified" datetime="2019-02-13T21:26:50+08:00">2019-02-13 21:26:50</time>
+                <time title="Modified: 2019-02-17 19:48:38 19:48:38" itemprop="dateModified" datetime="2019-02-17T19:48:38+08:00">2019-02-17 19:48:38</time>
               
             
           </span>
@@ -432,6 +432,9 @@
 </li>
 <li><p>休眠配置</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">1、重启并按com+r；</span><br><span class="line">2、终端输入后回车：csrutil disable</span><br><span class="line">3、正常重启（不按com+r）；</span><br><span class="line">4、终端输入后回车：ioreg -l | grep board-id</span><br><span class="line">5、上一步执行后终端会出现类似"board-id" = &lt;"Mac-06F11FD93F0323C5"&gt;，请注意每部电脑显示的id都不同，请记录所显示的id；</span><br><span class="line">6、终端输入后回车：cd /System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/X86PlatformPlugin.kext/Contents/Resources</span><br><span class="line">7、终端输入后回车： sudo -s</span><br><span class="line">8、输入密码</span><br><span class="line">9、（备份）终端输入后回车：cp Mac-06F11FD93F0323C5.plist Mac-06F11FD93F0323C5.plist.bak</span><br><span class="line">请注意上面的06F11FD93F0323C5要换为上面第5步所显示的id，下同。</span><br><span class="line">10、终端输入后回车：nano Mac-06F11FD93F0323C5.plist</span><br><span class="line">11、大约250行找到“TCPKeepAliveDuringSleep” 把其值改为 false, the “NotificationWake” 其值改为 false and “DNDWhileDisplaysSleep” 其值改为true:</span><br><span class="line">&lt;key&gt;TCPKeepAliveDuringSleep&lt;/key&gt;</span><br><span class="line">&lt;false/&gt;</span><br><span class="line">&lt;key&gt;NotificationWake&lt;/key&gt;</span><br><span class="line">&lt;false/&gt;</span><br><span class="line">&lt;key&gt;DNDWhileDisplaySleeps&lt;/key&gt;</span><br><span class="line">&lt;true/&gt;</span><br><span class="line">12、更改后储存退出文本编辑；</span><br><span class="line">13、重启并按com+r；</span><br><span class="line">14、终端输入后回车：csrutil ensable</span><br><span class="line">15、正常重启（不按com+r）；</span><br><span class="line">16、终端输入后回车：ioreg -l | grep IOPlatformFeatureDefaults</span><br><span class="line">17、如果显示：| | |   "IOPlatformFeatureDefaults" = &#123;"TCPKeepAliveDuringSleep"=No,"DNDWhileDisplaySleeps"=Yes,"TCPKeepAliveExpirationTimeout"=43200,"NotificationWake"=No&#125;</span><br><span class="line">这就成功了。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>fzf模糊搜索匹配</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 安装</span><br><span class="line">brew install fzf</span><br><span class="line"># 使用</span><br><span class="line">ctrl + r 替代原有的命令行搜索功能</span><br><span class="line">ctrl + t 交互式的文件搜索功能，ctrl + n下一个，ctrl + p 上一个</span><br><span class="line"># 除了少数命令，比如 kill，ssh 等，绝大多数命令需要以 ** 为前缀触发 fzf补全。比如：</span><br><span class="line">cd **&lt;Tab&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 
