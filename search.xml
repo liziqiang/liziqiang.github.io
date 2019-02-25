@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[css]]></title>
+    <url>%2F2019%2F02%2F25%2Fcss%2F</url>
+    <content type="text"><![CDATA[相对于父元素fixed定位，给父元素增加以下样式1transform: translate(0, 0)]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[webpack]]></title>
     <url>%2F2019%2F02%2F21%2Fwebpack%2F</url>
     <content type="text"><![CDATA[Webapck打包问题 contenthash问题 webpack@3中不支持，需要配置extract-text-plugin使用 PS：如果有多个entry的话必须使用contenthash，chunkhash会出现文件改动了但是hash不变的问题:😶]]></content>
