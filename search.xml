@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[css]]></title>
     <url>%2F2019%2F02%2F25%2Fcss%2F</url>
-    <content type="text"><![CDATA[相对于父元素fixed定位，给父元素增加以下样式1transform: translate(0, 0)]]></content>
+    <content type="text"><![CDATA[相对于父元素fixed定位，给父元素增加以下样式 1transform: translate(0, 0) Element.scrollTop 123The Element.scrollTop property gets or sets the number of pixels that an element&apos;s content is scrolled vertically.An element&apos;s scrollTop value is a measurement of the distance from the element&apos;s top to its topmost visible content. When an element&apos;s content does not generate a vertical scrollbar, then its scrollTop value is 0.PS: Element需要是设置了overflow: scroll的元素]]></content>
   </entry>
   <entry>
     <title><![CDATA[webpack]]></title>
